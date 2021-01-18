@@ -12,6 +12,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
 <link rel="stylesheet" href="css/bootstrap_blue.css" type="text/css" />
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 
 </head>
@@ -40,28 +41,29 @@
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Setup <span class="caret"></span></a>
 			  <ul class="dropdown-menu">
 				<li><a href="#"> CodeBlocks </a></li>
-				<li><a href="#"> Online C++ Compiler </a></li>
+				<li><a href="https://www.onlinegdb.com/online_c++_compiler" target="_blank" > Online C++ Compiler </a></li>
 				<li role="separator" class="divider"></li>
-				<li><a href="#"> GNUplot </a></li>
-				<li><a href="#"> Online GNUplot </a></li>
+				<li><a href="https://sourceforge.net/projects/gnuplot/" target="_blank" > GNUplot </a></li>
+				<li><a href="http://gnuplot.respawned.com/" target="_blank" > Online GNUplot </a></li>
 				<li role="separator" class="divider"></li>
 			  </ul>
 			</li>
-		  </ul>
-		
-		  <ul class="nav navbar-nav navbar-right">
-			<li><a href="#"> Contact </a></li>
+			
 			<li class="dropdown">
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Resources <span class="caret"></span></a>
 			  <ul class="dropdown-menu">
-				<li><a href="#">Action</a></li>
-				<li><a href="#">Another action</a></li>
-				<li><a href="#">Something else here</a></li>
+			  <li><a href="https://drive.google.com/file/d/16EtPWbvvq2PnPjpZcGSWJbt8raFA-o0N/view?usp=sharing" target="_blank" >All CP Sheets</a></li>
+				<li><a href="https://drive.google.com/file/d/1kDDnPz_thD75J9aWzSPl0o95CmY8MRfR/view?usp=sharing" target="_blank" >Codes from sheets</a></li>
+				
 				<li role="separator" class="divider"></li>
-				<li><a href="#">Separated link</a></li>
+				<li><a href="linux.txt" target="_blank" >Necessary Linux Commands</a></li>
+				<li><a href="gnuplot.txt" target="_blank" >Necessary GNUplot Commands</a></li>
 			  </ul>
 			</li>
-		  </ul>
+			
+			</ul>
+		
+		  
 		</div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 	</nav>
@@ -75,7 +77,8 @@
 	</div>
 	
 	<ul>
-	<li>Function and Array
+	<li> <h2> Function and Array </h2>
+	</br>
 	<ol>
 		<li>
 			ব্র‍্যাকেট/Parenthesis ঠিকমত close না করা, ভুল প্রয়োগ করা।
@@ -106,10 +109,26 @@
 	</li>
 	</br>
 	</br>
-	<li>Root finding
+	<li> <h2> Root finding </h2>
+	</br>
 	<ol>
 		<li>
-			Newton-Raphson method এ derivative ঠিকমত নির্ণয় না করা।  Example:
+			Newton-Raphson method এ derivative ঠিকমত নির্ণয় না করা।  Example: <br>
+			⇒ X = tanX<br>
+			⇒ X = sinX/cosX<br>
+
+			<table class="table">
+			<thead>
+			<td> <b>Case #1</b> </td>
+			<td> <b>Case #2</b> </td>
+			</thead>
+			<tbody>
+			<tr>
+			<td>⇒ XcosX - sinX = 0 -----(1)<br> ⇒ -XsinX + cosX - cosX = 0  <br> ⇒ -XsinX = 0 </td>
+				<td>⇒ sinX - XcosX = 0 -----(2) <br> ⇒ cosX + XsinX - cosX = 0 <br>⇒ XsinX = 0 </td>
+			</tr>
+			</tbody>
+			</table>
 			যদি function টা (1) এর মত লেখা হয় তাহলে function টার derivative এ উভয় পক্ষে -1 গুণ করা  যাবে না, কারণ 1st derivative এ রকম রেসাল্টই আসে।যদি function (2) এর মত লেখা হয় তবে তার corresponding 1st derivative এ মাইনাস চিহ্নটা আসে না!
 
 		</li>
@@ -123,7 +142,8 @@
 	</li>
 	</br>
 	</br>
-	<li>Integration
+	<li> <h2> Integration </h2>
+	</br>
 	<ol>
 		<li>
 			h = (b-a)/N আর প্রবলেমে উল্লেখ থাকা n সংখ্যক term এর Summation এ N আর n একই variable দিয়ে লেখা! h নির্ণয়ের জন্য fixed একটা N (number of intervals) থাকে, আর n সংখ্যক term কে যোগ করার জন্য n কে Loop এ রেখে বাড়াতে হয়। দুটাই N বা n দিয়ে লেখা সাধারণ ভুল।
@@ -147,7 +167,8 @@
 	</li>
 	</br>
 	</br>
-	<li>Solving Differential Equations
+	<li> <h2> Solving Differential Equations </h2>
+	</br>
 		<ol>
 		<li>
 			অনেক সময় Initial ভ্যালুতে Function এর মান Infitinity হয়। উদাহরণ হিসেবে Lane Emden এর DE এর কথা বলা যেতে পারে। এখানে dy/dx = -(2/x)*v - ys  ; y(0) = 1, v(0) = 0; অর্থাৎ, 
@@ -156,9 +177,11 @@ x = 0 এর জন্য Initial value গুলো দেয়া, কিন্�
 		</br>	
 		<li>
 			দুইটি Coupled 2nd Order DE solve করার ক্ষেত্রে চারটি 1st Order DE solve করতে হয়, যেখানে দুই ধরনের Velocity -- (1) Linear  ও  (2) Angular velocity update করার প্রয়োজন হয়। যেহেতু DE গুলো coupled কাজেই algorithm গুলো দেখতে অনেকটা নিম্নরূপঃ 
-
-v[i+1] = v[i] + h*G(L[i], theta[i], omega[i])      -------------------------(i)
-omega[i+1]  =  omega[i] + h*F(L[i][, v[i], theta[i], omega[i]  -----(ii)
+</br></br>
+<b> v[i+1] = v[i] + h*G(L[i], theta[i], omega[i])      -------------------------(i) </b>
+</br>
+<b> omega[i+1]  =  omega[i] + h*F(L[i][, v[i], theta[i], omega[i]  -----(ii) </b> 
+</br></br>
 
 ২য় লাইনে স্পষ্টত Angular velocity update করতে Linear Velocity পুরোনোটাই ব্যবহার হচ্ছে। কিন্তু আমরা যদি ১ম লাইনেই Linear Velocity আপডেট করে ফেলি তাহলে Angular Velocity update করতে অনিচ্ছাকৃতভাবে Updated Linear Velocity induce  হবে। এ ক্ষেত্রে উপরের সমীকরণে ব্যবহৃত Array Indexing ব্যবহার করলে এরকম সমস্যা হয় না। তবে array indexing ব্যবহার না  করলে Loop এ দ্বিতীয় সমীকরণটা আগে calculate করতে হবে।
 
