@@ -1,0 +1,168 @@
+<!DOCTYPE html/>
+<html> 
+<head> 
+<title> Welcome to CP LAB </title>
+
+<!-- <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script> -->
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
+<link rel="stylesheet" href="css/bootstrap_blue.css" type="text/css" />
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+
+</head>
+<body role="document">
+	<!-- Naviagtion -->
+		<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <a class="navbar-brand" href="#">CP Lab</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="tips.html"> Tips </a></li>
+			<li class="active"><a href="common_mistakes.html"> Common Mistakes </a></li>
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Setup <span class="caret"></span></a>
+			  <ul class="dropdown-menu">
+				<li><a href="#"> CodeBlocks </a></li>
+				<li><a href="#"> Online C++ Compiler </a></li>
+				<li role="separator" class="divider"></li>
+				<li><a href="#"> GNUplot </a></li>
+				<li><a href="#"> Online GNUplot </a></li>
+				<li role="separator" class="divider"></li>
+			  </ul>
+			</li>
+		  </ul>
+		
+		  <ul class="nav navbar-nav navbar-right">
+			<li><a href="#"> Contact </a></li>
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Resources <span class="caret"></span></a>
+			  <ul class="dropdown-menu">
+				<li><a href="#">Action</a></li>
+				<li><a href="#">Another action</a></li>
+				<li><a href="#">Something else here</a></li>
+				<li role="separator" class="divider"></li>
+				<li><a href="#">Separated link</a></li>
+			  </ul>
+			</li>
+		  </ul>
+		</div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+	<!-- End of Naviagtion -->
+<div class="container">
+	
+	
+	
+	<div class="page-header"> 
+		<h1> Common Mistakes </h1> 
+	</div>
+	
+	<ul>
+	<li>Function and Array
+	<ol>
+		<li>
+			ব্র‍্যাকেট/Parenthesis ঠিকমত close না করা, ভুল প্রয়োগ করা।
+		</li>
+		</br>	
+		<li>
+			অ্যারের Dimension এর চেয়ে বেশি value input দিলে output ভুল আসে, এরর মেসেজ আসে না।
+		</li>
+		</br>
+		<li>
+			return type function এ input হিসেবে Array elements গুলা ব্যবহার করা গেলেও output এ Array return করতে পারে না। এক্ষেত্রে void type function কাজে আসে। 
+		</li>
+		</br>
+		<li>
+			অনেক সময় function এর value infinity হওয়ায় data plot করার পর graph ঠিকঠাক আসে না। Example: tanX, X[-π, π] এ ক্ষেত্রে y axis এ output limit set করে দিতে হয়। এর জন্য gnuplot এ  data plot করার আগে set yrange [-5:5]  লিখে enter চাপতে হয়, যাতে y axis এ -5 থেকে 5 এর মধ্যে থাকা function এর মান plot হয়। 
+		</li>
+		</br>
+		<li>
+			Loop এ calculate করে ফলাফল প্রতি iteration এ diverge করে দেয় এমন কাজ করা যাবে না।  যেমন </br>{ sum += 2*f(a + i*h): } ✖</br>   {sum += f(a+ i*h); } result = 2*sum; ✔✔</br>
+		</li>
+		</br>
+	</ol>	
+	</li>
+	
+	<li>Root finding
+	<ol>
+		<li>
+			Newton-Raphson method এ derivative ঠিকমত নির্ণয় না করা।  Example:
+			যদি function টা (1) এর মত লেখা হয় তাহলে function টার derivative এ উভয় পক্ষে -1 গুণ করা  যাবে না, কারণ 1st derivative এ রকম রেসাল্টই আসে।যদি function (2) এর মত লেখা হয় তবে তার corresponding 1st derivative এ মাইনাস চিহ্নটা আসে না!
+
+		</li>
+		</br>	
+		<li>
+			Bisection method এ actual root এর কাছাকাছি মান interval এ রাখা,NewtonRaphson method এ approximate root actual root এর কাছাকাছি না রাখা। এই ভুল করলে ঠিকঠাক কোড লিখেও লাভ নেই। 
+		</li>
+		</br>
+		
+	</ol>	
+	</li>
+	
+	<li>Integration
+	<ol>
+		<li>
+			h = (b-a)/N আর প্রবলেমে উল্লেখ থাকা n সংখ্যক term এর Summation এ N আর n একই variable দিয়ে লেখা! h নির্ণয়ের জন্য fixed একটা N (number of intervals) থাকে, আর n সংখ্যক term কে যোগ করার জন্য n কে Loop এ রেখে বাড়াতে হয়। দুটাই N বা n দিয়ে লেখা সাধারণ ভুল।
+		</li>
+		</br>	
+		<li>
+			একাধিকবার Integration এর ক্ষেত্রে function এর Arguments ঠিকঠাক না লেখা।
+		</li>
+		</br>
+		<li>
+			Gaussian Quadrature এ সবগুলো অপারেশন একটা লুপেই করা।
+
+		</li>
+		</br>
+		<li>
+			যদি function এর মান Limit এর কোথাও infinity হয়ে যায় তাহলে Simpson's rule কোনো কাজেই আসে না, এরজন্য Gaussian Quadrature method apply করতে হয়।                                       Example:  (1 + cos²X)/sinX  এই function 0→π লিমিটে integration করলে 0 এবং π উভয় ক্ষেত্রেই function এর মান infinity আসে, কাজেই Gaussian Quadrature method use করতে হবে।
+		</li>
+		</br>
+		
+	</ol>	
+	</li>
+	
+	<li>Solving Differential Equations
+		<ol>
+		<li>
+			অনেক সময় Initial ভ্যালুতে Function এর মান Infitinity হয়। উদাহরণ হিসেবে Lane Emden এর DE এর কথা বলা যেতে পারে। এখানে dy/dx = -(2/x)*v - ys  ; y(0) = 1, v(0) = 0; অর্থাৎ, 
+x = 0 এর জন্য Initial value গুলো দেয়া, কিন্তু function এর মান x= 0 তে infinity আসে, কাজেই x এর মান শূন্যর কাছাকাছি ধরতে হবে। 
+		</li>
+		</br>	
+		<li>
+			দুইটি Coupled 2nd Order DE solve করার ক্ষেত্রে চারটি 1st Order DE solve করতে হয়, যেখানে দুই ধরনের Velocity -- (1) Linear  ও  (2) Angular velocity update করার প্রয়োজন হয়। যেহেতু DE গুলো coupled কাজেই algorithm গুলো দেখতে অনেকটা নিম্নরূপঃ 
+
+v[i+1] = v[i] + h*G(L[i], theta[i], omega[i])      -------------------------(i)
+omega[i+1]  =  omega[i] + h*F(L[i][, v[i], theta[i], omega[i]  -----(ii)
+
+২য় লাইনে স্পষ্টত Angular velocity update করতে Linear Velocity পুরোনোটাই ব্যবহার হচ্ছে। কিন্তু আমরা যদি ১ম লাইনেই Linear Velocity আপডেট করে ফেলি তাহলে Angular Velocity update করতে অনিচ্ছাকৃতভাবে Updated Linear Velocity induce  হবে। এ ক্ষেত্রে উপরের সমীকরণে ব্যবহৃত Array Indexing ব্যবহার করলে এরকম সমস্যা হয় না। তবে array indexing ব্যবহার না  করলে Loop এ দ্বিতীয় সমীকরণটা আগে calculate করতে হবে।
+
+		</li>
+		</br>
+		
+	</ol>	
+	</li>
+	
+	</ul>
+		 
+</div>	<!-- End of Container -->
+
+</body>
+</html> 
