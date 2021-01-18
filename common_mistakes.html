@@ -97,9 +97,15 @@
 			Loop এ calculate করে ফলাফল প্রতি iteration এ diverge করে দেয় এমন কাজ করা যাবে না।  যেমন </br>{ sum += 2*f(a + i*h): } ✖</br>   {sum += f(a+ i*h); } result = 2*sum; ✔✔</br>
 		</li>
 		</br>
+		<li>
+		Loop এ call করা variable loop এর body তে কোথাও call না করলে loop রান করে না, যার কারণে ফলাফল ভুল আসে। তারচেয়েও চিন্তার বিষয়, terminal এ কোনো error message আসে না। Example:</br>  for(i=0;i&ltn; i++) { result += 1/pow(n,2) } ✖ </br>for(i=0;i&ltn;i++) { result += 1/pow(i,2)  } ✔</br>
+
+		</li>
+		</br>
 	</ol>	
 	</li>
-	
+	</br>
+	</br>
 	<li>Root finding
 	<ol>
 		<li>
@@ -115,7 +121,8 @@
 		
 	</ol>	
 	</li>
-	
+	</br>
+	</br>
 	<li>Integration
 	<ol>
 		<li>
@@ -138,7 +145,8 @@
 		
 	</ol>	
 	</li>
-	
+	</br>
+	</br>
 	<li>Solving Differential Equations
 		<ol>
 		<li>
