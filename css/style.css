@@ -10,3 +10,22 @@
   width:30em;
 	
 }
+
+.thumbnail
+{
+	max-width: 15em;
+	min-width: 15em;
+	max-height:16em;
+	min-height: 16em;
+	background: #096986d4;
+	padding: 10px;
+	margin:0 auto;
+	margin-bottom:30px;
+	color:white;
+}
+
+.thumbnail:hover
+{
+	text-decoration:none;
+}
+

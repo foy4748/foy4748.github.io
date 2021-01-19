@@ -8,6 +8,8 @@
   src="https://code.jquery.com/jquery-2.2.4.min.js"
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
   crossorigin="anonymous"></script>
+<!-- Handlebars JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js" integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw==" crossorigin="anonymous"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
@@ -77,21 +79,69 @@
 	<div class="page-header"> 
 		<h1> CP Lab Help </h1> 
 	</div>
-	
+	<!-- Cards -->
+		<div class= "row">
+			
+			
+				<!-- The card's content will be here -->
+				<div id="cards_space">
+				</div>
+				
+			
+		</div> <!-- End of row -->
 
 	
-	<div class="container-fluid" role="main">
-	<h1> ভূমিকা </h1>
-	<p> Programming জগতে ভুলের কোনো স্থান নেই। সামান্য ভুলের কারণে প্রোগ্রামের ফলাফল হতে পারে সম্পূর্ণই ভুল। তবে ভুল থেকে অভিজ্ঞতা অর্জন করা যেতে পারে। এই লেখনির মূল লক্ষ্য হচ্ছে সাধারণ কিছু ভুল নিয়ে আলোচনা করা, বিশেষ করে যেসব ভুল Terminal এ কোনো error message দেয় না। Code RUN হল, অথচ কোনোরকম error message দেয়া ছাড়াই output ভুল আসছে এমন code গুলোর ভুল খুঁজে বের করা কিছুটা কঠিন। বিশেষ করে পরীক্ষার সময় যখন সল্প সময়ে code গুলো লেখতে হয়, তখন এমন ভুল খুঁজে বের করতে বেশি সমস্যা হয়। 
-	</p>
 	
-	<p>অনেকেই পিসিতে Windows এর পাশাপাশি Ubuntu অপারেটিং সিস্টেম ইন্সটল করে। কিন্তু C++ code run করার জন্য Ubuntu লাগবেই এমন ধারণা ঠিক না। Windows এ C++ code run করানোর পাশাপাশি GNUplot ব্যবহার করা যায়, যার ব্যবহারবিধি সম্পূর্ণই Ubuntu তে terminal এ command দিয়ে GNUplot ব্যবহার করার মতই। এর ব্যবহারবিধি ও কৌশল এখানে আলোচনা করা হয়েছে। এই GNUplot যেকোনো অ্যান্ড্রয়েড স্মার্টফোনেও ব্যবহার করা সম্ভব।  
-	</p>
 	
-	<p> </p>
-	<p> </p>
+</div>
+
+<!-- Template -->
+	<script id="cards" type="text/x-handlebars-template">
+		
+		{{#each topics}}
+			<div class= "col-md-3">
+			<a href="{{link}}" class="thumbnail cardss">
+			<div class="thumbnail">
+				
+					<h2> {{topic}} </h2>
+					<p>{{description}} </p>
+				
+			</div>
+			</a>
+			</div> <!-- End of Column -->
+		{{/each}}
+		
+	</script>
 	
-	</div>
+	<!-- JS Magics -->
+	<script type="text/javascript">
+		var card_data = {"topics":
+							[
+								{
+									topic:"Tips",
+									description: "Improve your coding practice",
+									link: "tips.html"
+								},
+								
+								{
+									topic:"Common Mistakes",
+									description:"Learn from your mistakes or others",
+									link: "common_mistakes.html"
+								},
+								
+								{
+									topic:"Resources",
+									description:"Don't float around. Everything you need is here.",
+									link: "#"
+								}
+							]
+						};
+		var source = $('#cards').html();
+		var template = Handlebars.compile(source);
+		var html = template(card_data);
+		$('#cards_space').html(html); 
+	</script>
+
 
 </body>
 </html> 
