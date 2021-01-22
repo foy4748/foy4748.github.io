@@ -1,15 +1,13 @@
 <!DOCTYPE html/>
 <html> 
 <head> 
-<title> CP Lab help </title>
+<title> CP Lab help | Tips </title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script> -->
 <script
   src="https://code.jquery.com/jquery-2.2.4.min.js"
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
   crossorigin="anonymous"></script>
-<!-- Handlebars JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js" integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw==" crossorigin="anonymous"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
@@ -19,8 +17,6 @@
 
 </head>
 <body role="document">
-	
-
 	<!-- Naviagtion -->
 		<nav class="navbar navbar-default">
 	  <div class="container-fluid">
@@ -38,8 +34,8 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		  <ul class="nav navbar-nav">
-		  <li class="active"><a href="index.html">Home</a></li>
-			<li><a href="tips.html"> Tips </a></li>
+			<li><a href="index.html">Home</a></li>
+			<li class="active"><a href="tips.html"> Tips </a></li>
 			<li><a href="common_mistakes.html"> Common Mistakes </a></li>
 			<li class="dropdown">
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Setup <span class="caret"></span></a>
@@ -52,96 +48,33 @@
 				<li role="separator" class="divider"></li>
 			  </ul>
 			</li>
-			
-			<li class="dropdown">
-			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Resources <span class="caret"></span></a>
-			  <ul class="dropdown-menu">
-				<li><a href="https://drive.google.com/file/d/16EtPWbvvq2PnPjpZcGSWJbt8raFA-o0N/view?usp=sharing" target="_blank" >All CP Sheets</a></li>
-				<li><a href="https://drive.google.com/file/d/1kDDnPz_thD75J9aWzSPl0o95CmY8MRfR/view?usp=sharing" target="_blank" >Codes from sheets</a></li>
-
-				<li role="separator" class="divider"></li>
-				<li><a href="linux.txt" target="_blank" >Necessary Linux Commands</a></li>
-				<li><a href="gnuplot.txt" target="_blank" >Necessary GNUplot Commands</a></li>
-			  </ul>
-			</li>
 		  </ul>
 		
-		 
+		  
 		</div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 	</nav>
 	<!-- End of Naviagtion -->
-
 <div class="container">
-
+	
 	
 	
 	<div class="page-header"> 
-		<h1> CP Lab Help </h1> 
+		<h1> Resources </h1> 
 	</div>
-	<!-- Cards -->
-		<div class= "row">
-			
-			
-				<!-- The card's content will be here -->
-				<div id="cards_space">
-				</div>
-				
-			
-		</div> <!-- End of row -->
-
 	
-	
-	
-</div>
-
-<!-- Template -->
-	<script id="cards" type="text/x-handlebars-template">
-		
-		{{#each topics}}
-			<div class= "col-md-3">
-			<a href="{{link}}" class="thumbnail cardss">
-			<div class="thumbnail">
-				
-					<h2> {{topic}} </h2>
-					<p>{{description}} </p>
-				
-			</div>
-			</a>
-			</div> <!-- End of Column -->
-		{{/each}}
-		
-	</script>
-	
-	<!-- JS Magics -->
-	<script type="text/javascript">
-		var card_data = {"topics":
-							[
-								{
-									topic:"Tips",
-									description: "Improve your coding practice",
-									link: "tips.html"
-								},
-								
-								{
-									topic:"Common Mistakes",
-									description:"Learn from your mistakes or others",
-									link: "common_mistakes.html"
-								},
-								
-								{
-									topic:"Resources",
-									description:"Don't float around. Everything you need is here.",
-									link: "resources.html"
-								}
-							]
-						};
-		var source = $('#cards').html();
-		var template = Handlebars.compile(source);
-		var html = template(card_data);
-		$('#cards_space').html(html); 
-	</script>
-
+	<ul>
+		<li><a href="https://drive.google.com/file/d/16EtPWbvvq2PnPjpZcGSWJbt8raFA-o0N/view?usp=sharing" target="_blank" >All CP Sheets</a></li>
+		<br>
+		<li><a href="https://drive.google.com/file/d/1kDDnPz_thD75J9aWzSPl0o95CmY8MRfR/view?usp=sharing" target="_blank" >Codes from sheets</a></li>
+		<br>
+		<li><a href="linux.txt" target="_blank" >Necessary Linux Commands</a></li>
+		<br>
+		<li><a href="gnuplot.txt" target="_blank" >Necessary GNUplot Commands</a></li>
+		<br>
+	</ul>
+	 
+</div>	<!-- End of Container -->
 
 </body>
 </html> 
